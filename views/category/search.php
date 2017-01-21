@@ -53,7 +53,7 @@ use yii\helpers\Html;
 
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
-                    <h2 class="title text-center">Поиск по запросу<?=$q ?></h2>
+                    <h2 class="title text-center">Поиск по запросу<?=Html::encode($q) ?></h2>
                     <?php if(!empty($products)): ?>
                         <?php $i = 0; foreach ($products as $product): ?>
                             <div class="col-sm-4">
