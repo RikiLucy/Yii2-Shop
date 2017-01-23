@@ -16,9 +16,8 @@ class CartController extends AppController
         $session->open();
         $cart = new Cart();
         $cart->addToCart($product);
-        debug($session['cart']);
-        debug($session['cart.qty']);
-        debug($session['cart.sum']);
+        $this->layout = false;
+        return $this->render('cart-modal', compact('session'));
 
 
 
