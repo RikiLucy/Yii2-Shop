@@ -1203,6 +1203,10 @@ h2.title {
   right: 0;
 }
 
+.del-item{
+  cursor: pointer;
+}
+
 #similar-product .carousel-inner .item{
 	padding-left:0px;
 }
