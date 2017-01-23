@@ -28,11 +28,15 @@ class Cart extends ActiveRecord
         // если товар уже был, то его кол-во плюс еще, если не было, передаем просто кол-во
         $_SESSION['cart.sum'] = isset($_SESSION['cart.sum']) ? $_SESSION['cart.sum'] + $qty * $product->price : $qty * $product->price;
 
+    }
+    public function recalc($id){
+        if(!isset($_SESSION['cart'][$id])) return false;
+        $qtyMinus = $_SESSION['cart'][$id]['qty'];
+        $sumMinus = $_SESSION['cart'][$id]['qty'] * $_SESSION['cart'][$id]['price'];
 
-
-
-
-
+        $_SESSION['cart.qty'] -= $qtyMinus; // пересчет кол-ва и суммы после удаления
+        $_SESSION['cart.sum'] -= $sumMinus;
+        unset($_SESSION['cart'][$id]);
 
     }
 
