@@ -6,10 +6,49 @@
 		speed: 300
 	});
 
+
+
 function showCart(cart) {
 	$('#cart .modal-body').html(cart);
 	$('#cart').modal();
 }
+
+function getCart() {
+	$.ajax({
+		url: '/cart/show',
+
+		type: 'GET',
+		success: function (res) {
+			//console.log(res);
+			showCart(res);
+
+		},
+		error: function () {
+			alert('Error');
+		}
+
+	});
+	return false;
+
+}
+$('#cart .modal-body').on('click', '.del-item', function () {
+	var id = $(this).data('id');
+	$.ajax({
+		url: '/cart/del-item',
+		data: {id: id},
+		type: 'GET',
+		success: function (res) {
+			//console.log(id); ddvdv
+			showCart(res);
+
+		},
+		error: function () {
+			alert('Error');
+		}
+
+	});
+
+});
 
 function clearCart() {
 	$.ajax({
