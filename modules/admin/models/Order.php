@@ -28,6 +28,10 @@ class Order extends \yii\db\ActiveRecord
         return 'order';
     }
 
+    public function getOrderItems(){
+        return $this->hasMany(OrderItems::className(), ['order_id' => 'id']);
+    }
+
     /**
      * @inheritdoc
      */
@@ -52,13 +56,13 @@ class Order extends \yii\db\ActiveRecord
             'id' => '№ Заказа',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
-            'qty' => 'Qty',
-            'sum' => 'Sum',
-            'status' => 'Status',
-            'name' => 'Name',
+            'qty' => 'Кол-во',
+            'sum' => 'Сумма',
+            'status' => 'Статус',
+            'name' => 'Имя',
             'email' => 'Email',
-            'phone' => 'Phone',
-            'address' => 'Address',
+            'phone' => 'Телефон',
+            'address' => 'Адрес',
         ];
     }
 }
