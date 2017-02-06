@@ -58,7 +58,7 @@ use yii\helpers\Html;
                         <div class="view-product">
 
 
-                            <?= Html::img($mainImg->getUrl(), ['alt' => $product->name]) ?>
+                            <?= Html::img($mainImg->getUrl('268x249'), ['alt' => $product->name]) ?>
                             <h3>ZOOM</h3>
                         </div>
                         <div id="similar-product" class="carousel slide" data-ride="carousel">
