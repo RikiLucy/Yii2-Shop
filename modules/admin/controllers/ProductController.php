@@ -67,6 +67,14 @@ class ProductController extends Controller
         $model = new Product();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->image = UploadedFile::getInstance($model, 'image');
+            //debug($model->image);
+            if ($model->image){
+                $model->upload();
+            }
+            unset($model->image);
+            $model->gallery = UploadedFile::getInstances($model, 'gallery');
+            $model->uploadGallery();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
