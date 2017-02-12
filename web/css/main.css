@@ -896,11 +896,12 @@ h2.title {
 }
 
 .productinfo img{
-  width: 100%;
+  width: 70%;
 }
 
 .productinfo{
  position:relative;
+  height: 400px;
 }
 
 .product-overlay {
@@ -962,6 +963,9 @@ h2.title {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
   margin-bottom: 25px;
+  /*position: absolute;
+  top: 358px;
+  left: 67px;*/
 }
 
 .add-to-cart:hover {

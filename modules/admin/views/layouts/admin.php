@@ -106,7 +106,7 @@ ltAppAsset::register($this);
                                 <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                                 <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                                 <li><a href="#" onclick="return getCart()"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                                <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+                                <li><a href="<?= \yii\helpers\Url::to(['/admin'])?>"><i class="fa fa-lock"></i> Login</a></li>
                             </ul>
                         </div>
                     </div>
@@ -128,19 +128,20 @@ ltAppAsset::register($this);
                         </div>
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
-                                <li><a href="index.html" class="active">Home</a></li>
-                                <li class="dropdown"><a href="#">Категории<i class="fa fa-angle-down"></i></a>
+                                <li><a href="<?= \yii\helpers\Url::to(['/admin']) ?>" class="active">Заказы</a></li>
+                                <li class="dropdown"><a href="<?= \yii\helpers\Url::to(['category/index']) ?>">Категории<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="<?= \yii\helpers\Url::to(['category/index']) ?>">Список категорий</a></li>
                                         <li><a href="<?= \yii\helpers\Url::to(['category/create']) ?>"">Добавить категорию</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="#">Товары<i class="fa fa-angle-down"></i></a>
+                                <li class="dropdown"><a href="<?= \yii\helpers\Url::to(['product/index']) ?>">Товары<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="<?= \yii\helpers\Url::to(['product/index']) ?>">Список товаров</a></li>
                                         <li><a href="<?= \yii\helpers\Url::to(['product/create']) ?>">Добавить товар</a></li>
                                     </ul>
                                 </li>
+                                <li><a href="404.html">Слайдер</a></li>
                                 <li><a href="404.html">404</a></li>
                                 <li><a href="contact-us.html">Contact</a></li>
                             </ul>

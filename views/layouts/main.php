@@ -21,6 +21,7 @@ ltAppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
+
     <meta name="description" content="">
     <meta name="author" content="">
     <title><?= Html::encode($this->title) ?></title>
@@ -48,7 +49,7 @@ ltAppAsset::register($this);
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <!--<div class="col-sm-6"> // соц кнопки вверху страницы
                     <div class="social-icons pull-right">
                         <ul class="nav navbar-nav">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -58,7 +59,7 @@ ltAppAsset::register($this);
                             <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                         </ul>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div><!--/header_top-->
@@ -72,7 +73,7 @@ ltAppAsset::register($this);
                             <?= Html::img('@web/images/home/logo.png', ['alt' => 'E_SHOPER'])?>
                             
                     </div>
-                    <div class="btn-group pull-right">
+                    <!--<div class="btn-group pull-right"> // выбор валюты рядом с лого
                         <div class="btn-group">
                             <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
                                 USA
@@ -94,7 +95,7 @@ ltAppAsset::register($this);
                                 <li><a href="#">Pound</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
@@ -103,8 +104,8 @@ ltAppAsset::register($this);
                             <li><a href="<?= \yii\helpers\Url::to(['/site/logout']) ?>"><i class="fa fa-user"></i>
                                     <?= Yii::$app->user->identity['username'] ?> (Выход) </a></li>
                             <? endif; ?>
-                            <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                            <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                            <!--<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+                            <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>-->
                             <li><a href="#" onclick="return getCart()"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                             <li><a href="<?= \yii\helpers\Url::to(['/admin'])?>"><i class="fa fa-lock"></i> Login</a></li>
                         </ul>
@@ -126,7 +127,7 @@ ltAppAsset::register($this);
                             <span class="icon-bar"></span>
                         </button>
                     </div>
-                    <div class="mainmenu pull-left">
+                    <!--<div class="mainmenu pull-left"> // меню
                         <ul class="nav navbar-nav collapse navbar-collapse">
                             <li><a href="index.html" class="active">Home</a></li>
                             <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
@@ -147,7 +148,7 @@ ltAppAsset::register($this);
                             <li><a href="404.html">404</a></li>
                             <li><a href="contact-us.html">Contact</a></li>
                         </ul>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="col-sm-3">
                     <div class="search_box pull-right">
