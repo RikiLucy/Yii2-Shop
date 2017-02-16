@@ -10,6 +10,7 @@ namespace app\controllers;
 
 use app\models\Category;
 use app\models\Product;
+use app\modules\admin\models\Slider;
 use Yii;
 use yii\data\Pagination;
 
@@ -17,10 +18,11 @@ class CategoryController extends AppController
 {
     public function actionIndex()
     {
-        $hits = Product::find()->where(['hit' => '1'])->limit(6)->all();
+        $hits = Product::find()->where(['hit' => '1'])->all(); //limit(6)->
+        $sliders = Slider::find()->all();
         $this->setMeta('E_SHOPPER');
         //debug($hits);
-        return $this->render('index', compact('hits'));
+        return $this->render('index', compact('hits', 'sliders'));
 
     }
 

@@ -141,9 +141,15 @@ ltAppAsset::register($this);
                                         <li><a href="<?= \yii\helpers\Url::to(['product/create']) ?>">Добавить товар</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="404.html">Слайдер</a></li>
+                                <li class="dropdown"><a href="<?= \yii\helpers\Url::to(['slider/index'])?>">Слайдер<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+                                        <li><a href="<?= \yii\helpers\Url::to(['slider/index'])?>">Список</a></li>
+                                        <li><a href="<?= \yii\helpers\Url::to(['slider/create'])?>">Добавить</a></li>
+                                    </ul>
+                                </li>
+                                <!--
                                 <li><a href="404.html">404</a></li>
-                                <li><a href="contact-us.html">Contact</a></li>
+                                <li><a href="contact-us.html">Contact</a></li>-->
                             </ul>
                         </div>
                     </div>

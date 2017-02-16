@@ -142,7 +142,10 @@ use yii\helpers\Html;
                                                 </a>
                                                 <h2>$ <?= $hit->price ?></h2>
                                                 <p><a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $hit->id]) ?>"><?= $hit->name ?></a></p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                <a data-id="<?= $hit->id ?>" class="btn btn-fefault add-to-cart cart">
+                                                    <i class="fa fa-shopping-cart"></i>
+                                                    Add to cart
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

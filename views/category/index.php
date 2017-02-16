@@ -13,24 +13,32 @@ use yii\helpers\Html;
             <div class="col-sm-12">
                 <div id="slider-carousel" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
-                        <!--<li data-target="#slider-carousel" data-slide-to="1"></li>
-                        <li data-target="#slider-carousel" data-slide-to="2"></li>-->
+                        <?php $i = 0; foreach ($sliders as $slider): ?>
+                            <li data-target="#slider-carousel" data-slide-to="<?= $i ?>" <?php if ($i == 1): echo "class='active'"; endif;?>> </li>
+
+                            <?php $i++; ?>
+                        <?php endforeach; ?>
                     </ol>
 
                     <div class="carousel-inner">
-                        <div class="item active">
+                        <?php $i = 0; foreach ($sliders as $slider): ?>
+                        <div <?php if ($i == 0): echo "class='item active'"; else: echo "class='item'"; endif;?>>
+
+
                             <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>Free E-Commerce Template</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
+                                <h1><?= $slider->title ?></h1>
+                                <h2><?= $slider->subtitle ?></h2>
+                                <p><?= $slider->text ?></p>
+                                <form action="<?= $slider->btn_link ?>">
+                                <button type="submit" class="btn btn-default get"><?= $slider->btn_title ?></button>
+                                </form>
                             </div>
                             <div class="col-sm-6">
-                                <img src="images/home/girl1.jpg" class="girl img-responsive" alt="" />
-                                <img src="images/home/pricing.png"  class="pricing" alt="" />
+                                <?= Html::img($slider->getImage()->getUrl('484x441'), ['alt' => $slider->title]) ?>
                             </div>
+                    <?php $i++; ?>
                         </div>
+                        <?php endforeach; ?>
                         <!--<div class="item">
                             <div class="col-sm-6">
                                 <h1><span>E</span>-SHOPPER</h1>
@@ -116,7 +124,7 @@ use yii\helpers\Html;
             <div class="col-sm-9 padding-right">
                 <?php if(!empty($hits)) :  ?>
                 <div class="features_items"><!--features_items-->
-                    <h2 class="title text-center">Features Items2</h2>
+                    <h2 class="title text-center">Features Items</h2>
                     <?php foreach ($hits as $hit): ?>
                     <?php $mainImg = $hit->getImage(); ?>
                     <div class="col-sm-4">

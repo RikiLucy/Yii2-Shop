@@ -61,7 +61,8 @@ use yii\helpers\Html;
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $product->id])?>">
-                                                <?= Html::img("@web/images/products/{$product->img}", ['alt' => $product->name]) ?>
+
+                                                <?= Html::img($product->getImage()->getUrl(), ['alt' => $product->name]) ?>
                                             </a>
                                             <h2>$<?= $product->price ?></h2>
                                             <p><a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $product->id])?>"><?= $product->name ?></a></p>

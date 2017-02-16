@@ -2,8 +2,11 @@
 
  $('#sl2').slider();
 
+
+
 	$('.catalog').dcAccordion({
 		speed: 300
+		//disableLink : false
 	});
 
 
